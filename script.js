@@ -9,7 +9,7 @@ window.promises = [promise1,promise2,promise3,promise4,promise5];
         }
 
         function delay(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
+            return new Promise(resolve => setTimeout(resolve("hello"), ms));
         }
 
      
