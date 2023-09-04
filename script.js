@@ -1,4 +1,9 @@
-window.promises = [];
+const promise1=delay(getRandomTime());
+const promise2=delay(getRandomTime());
+const promise3=delay(getRandomTime());
+const promise4=delay(getRandomTime());
+const promise5=delay(getRandomTime());
+window.promises = [promise1,promise2,promise3,promise4,promise5];
      function getRandomTime() {
             return Math.floor(Math.random() * 5000) + 1000; // Random time between 1 and 5 seconds in milliseconds
         }
@@ -7,12 +12,7 @@ window.promises = [];
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        const promises = Array.from({ length: 5 }, () => {
-            return delay(getRandomTime())
-                .then(() => {
-                    return `Promise resolved after ${ms / 1000} seconds`;
-                });
-        });
+     
 
         Promise.any(promises)
             .then(result => {
